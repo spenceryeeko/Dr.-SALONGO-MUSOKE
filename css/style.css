@@ -5,6 +5,12 @@
     --dark: #0F172B;
 }
 
+/* Prevent horizontal overflow */
+html, body {
+    overflow-x: hidden;
+}
+
+
 .ff-secondary {
     font-family: 'Pacifico', cursive;
 }
