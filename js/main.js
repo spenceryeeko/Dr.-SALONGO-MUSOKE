@@ -138,3 +138,51 @@ $(document).ready(function(){
     }
   });
 }
+
+//booking js
+
+document.getElementById("bookingForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // Stop normal form submission
+
+    // Get form values
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let datetime = document.getElementById("datetime").value.trim();
+    let people = document.getElementById("select1").value.trim();
+    let message = document.getElementById("message").value.trim();
+
+    // Simple validation
+    if (!name || !email || !datetime || !people) {
+        alert("Please fill in all required fields before booking.");
+        return;
+    }
+
+    // Optional: Email format check
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+    }
+
+    // Your WhatsApp number (with country code, no + or spaces)
+    let phoneNumber = "256701155969"; 
+
+    // Create the message
+    let whatsappMessage = 
+`Reservation Request:
+Name: ${name}
+Email: ${email}
+Date & Time: ${datetime}
+No. of People: ${people}
+Special Request: ${message || "None"}`;
+
+    // Encode for URL
+    let encodedMessage = encodeURIComponent(whatsappMessage);
+
+    // Open WhatsApp
+    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, "_blank");
+});
+
+
+
+

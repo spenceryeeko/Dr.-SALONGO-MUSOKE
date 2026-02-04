@@ -149,10 +149,105 @@
     }
 }
 
+.healing-btn,
+.whatsapp-btn {
+    width: auto;              /* allow natural width */
+    max-width: 100%;          /* never exceed container width */
+    white-space: normal;      /* allow text to wrap if needed */
+    text-align: center;
+    padding: 12px 20px;       /* reduce horizontal padding for mobile */
+    box-sizing: border-box;
+}
+
+.healing-btn {
+    background-color: #000;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #EABB2B;
+    border: 1px solid #EABB2B;
+    border-radius: 23px;
+    padding: 12px 35px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    align-items: center;
+    
+}
+
+.healing-btn:hover {
+    background-color: #EABB2B;
+    color: #000;
+}
+
+.whatsapp-btn {
+    align-items: center;
+}
+
+
+.hero-paragraph{
+    display: block;
+    
+    max-width: 100%;            /* take full width of parent container */
+    color: #ffffff;
+    
+    text-align: center;         /* optional: center text */
+    word-break: normal;         /* allow natural line breaks */
+    overflow-wrap: break-word;
+    
+}
+
+.salongo-name {
+    font-weight: 900;
+    letter-spacing: 2.5px;
+    word-spacing: 0.1em;
+    color: #EABB2B;
+    line-height: 1;
+    text-align: center;
+    
+    /* Large screen default */
+    font-size: 96px;
+    white-space: nowrap;
+}
+
+.hero-flex-column {
+    padding-top: 150px; /* or whatever looks good */
+}
+
+
+/* Medium screens */
+@media (max-width: 1200px) {
+    .salongo-name {
+        font-size: 72px;
+    }
+}
+
+/* Small screens */
+@media (max-width: 768px) {
+    .salongo-name {
+        font-size: 48px;
+        white-space: normal; /* allow wrapping if needed */
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    .salongo-name {
+        font-size: 36px;
+        white-space: normal;
+    }
+}
+
+
+
+
 
 /*** Hero Header ***/
-.hero-header {
-    background: linear-gradient(rgba(15, 23, 43, .9), rgba(15, 23, 43, .9)), url(../img/bg-hero.jpg);
+.hero-flex-column {
+    background:
+  linear-gradient(rgba(15, 23, 43, .6), rgba(15, 23, 43, .6)),
+  url(../img/bg-hero2.jpg);
+
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -161,6 +256,218 @@
 .hero-header img {
     animation: imgRotate 50s linear infinite;
 }
+
+.hero-paragraph{
+    color: white;
+    font-size: 22px;
+}
+
+.hero-2paragraph{
+    color: rgb(218, 208, 208);
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: left;
+    margin-left: 10%;          /* push it slightly from the left */
+    max-width: 60%;
+}
+
+.whatsapp-btn, .call-btn {
+    display: inline-flex;       /* icon + text aligned */
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    font-size: 15px;
+    border-radius: 23px;
+    padding: 12px 25px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.whatsapp-btn {
+    background-color: #25D366;   /* WhatsApp green */
+    color: #fff;
+    border: 1px solid #25D366;
+}
+
+.whatsapp-btn:hover {
+    background-color: #1DA851;
+    color: #fff;
+}
+
+.call-btn {
+    background-color: #000;      /* black call button */
+    color: #EABB2B;
+    border: 1px solid #EABB2B;
+}
+
+.call-btn:hover {
+    background-color: #EABB2B;
+    color: #000;
+}
+
+.problem-btn {
+    background-color: transparent;
+    color: #EABB2B;
+    border: 1px dashed #EABB2B;
+    border-radius: 23px;
+    font-size: 15px;
+    padding: 12px 25px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.problem-btn:hover {
+    background-color: #EABB2B;
+    color: #000;
+}
+
+.mb-5{
+    font-size: 20px;
+}
+
+.service-img {
+    width: 100%;
+    height: 180px;          /* adjust if you want taller/shorter */
+    object-fit: cover;      /* fills box without distortion */
+    display: block;
+}
+
+.services-section {
+    background-image: url(../img/backg14.jfif);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.healing-btn{
+    text-align: center;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+/* WhatsApp CTA scroll / hover effect */
+.whatsapp-cta {
+    transition: all 0.35s ease;
+    background-color: #EABB2B;   /* default */
+    color: #000;
+    font-size: 20px
+    font-weight: 300px;
+}
+
+/* rise + dark background */
+.whatsapp-cta:hover,
+.whatsapp-cta:focus {
+    background-color: #000;
+    color: #EABB2B;
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.contact-box {
+    background: rgba(255, 255, 255, 0.06);   /* clear / glass */
+    border: 1px solid #EABB2B;               /* gold border */
+    border-radius: 18px;
+    padding: 35px 25px;
+    height: 100%;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(6px);
+}
+
+.contact-box:hover {
+    transform: translateY(-8px);
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.contact-section h2,
+.contact-section h5,
+.contact-section p {
+    color: #ffffff;
+}
+
+.contact-section p {
+    opacity: 0.9;
+}
+
+.contact-section {
+    position: relative;
+    background: 
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        url("img/backg12");   /* 👈 change image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.about-bg {
+    background-image: url("img/backg14.jfif"); /* put your image path here */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+/* overlay so text is readable */
+.about-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+/* keep content above overlay */
+.about-bg .container {
+    position: relative;
+    z-index: 2;
+}
+
+.about-bg h5,
+.about-bg p {
+    color: #ffffff;
+}
+
+.btn,
+.healing-btn,
+.whatsapp-cta {
+    white-space: normal !important;   /* allow wrapping */
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    text-align: center;
+    max-width: 100%;
+}
+
+.navbar-logo-text {
+    font-size: 28px;
+    line-height: 1.2;
+    white-space: normal;          /* allow wrapping */
+    word-break: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+
+
+
+@media (max-width: 768px) {
+    .whatsapp-btn,
+    .problem-btn,
+    .call-btn {
+        width: 100%;
+        max-width: 320px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .healing-btn,
+    .whatsapp-cta {
+        font-size: 16px;
+        padding: 12px 20px;
+        width: 100%;          /* full-width on small screens */
+        max-width: 100%;
+        line-height: 1.4;
+    }
+}
+
+
 
 @keyframes imgRotate { 
     100% { 
