@@ -664,26 +664,37 @@
     <script src="js/main.js"></script>
 
     <script>
-document.querySelectorAll('.icon-btn').forEach(btn => {
+const iconButtons = document.querySelectorAll('.icon-btn');
+
+// Handle icon tap behavior
+iconButtons.forEach(btn => {
     btn.addEventListener('click', function (e) {
-        // Only apply this behavior on small screens
         if (window.innerWidth <= 768) {
 
-            // If button is NOT active → first tap (expand only)
+            // If not active → first tap opens only
             if (!this.classList.contains('active')) {
-                e.preventDefault(); // stop navigation
+                e.preventDefault();
 
-                // Close other buttons
-                document.querySelectorAll('.icon-btn').forEach(b => {
-                    b.classList.remove('active');
-                });
+                // Close all others
+                iconButtons.forEach(b => b.classList.remove('active'));
 
                 // Open this one
                 this.classList.add('active');
             }
-            // If already active → second tap → allow navigation
+            // If already active → second tap is allowed (no preventDefault)
         }
     });
+});
+
+// Close when tapping anywhere else
+document.addEventListener('click', function (e) {
+    if (window.innerWidth <= 768) {
+        iconButtons.forEach(btn => {
+            if (!btn.contains(e.target)) {
+                btn.classList.remove('active');
+            }
+        });
+    }
 });
 </script>
 
