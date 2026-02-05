@@ -459,7 +459,7 @@ html, body {
     justify-content: flex-start;
 
     padding: 14px 16px;        /* ⬅ increases height */
-    min-height: 56px;          /* ⬅ consistent height */
+    min-height: 60px;          /* ⬅ consistent height */
 
     border-radius: 50px 0 0 50px;
     width: 52px;               /* collapsed width */
@@ -496,7 +496,7 @@ html, body {
 
 /* Hover for desktop */
 .icon-btn:hover {
-    width: 130px;
+    width: 150px;
 }
 
 .icon-btn:hover .btn-text {
@@ -505,7 +505,7 @@ html, body {
 
 /* Active class for mobile tap */
 .icon-btn.active {
-    width: 130px;
+    width: 150px;
 }
 
 .icon-btn.active .btn-text {
